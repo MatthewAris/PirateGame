@@ -37,11 +37,9 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public boolean onTouchEvent(MotionEvent event) {
-        switch (event.getAction() & MotionEvent.ACTION_MASK) {
-            case MotionEvent.ACTION_UP:
-                Intent intent = new Intent(this, MainActivity2.class);
-                startActivity(intent);
-                break;
+        if ((event.getAction() & MotionEvent.ACTION_MASK) == MotionEvent.ACTION_UP) {
+            Intent intent = new Intent(this, MainActivity2.class);
+            startActivity(intent);
             //case MotionEvent.AX
         }
         return true;
